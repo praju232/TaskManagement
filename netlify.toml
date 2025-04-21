@@ -1,6 +1,6 @@
 [build]
   base = "src"
-  publish = "dist/TaskManagement"
+  publish = "dist/browser"
   command = "npm install --force && npm run build --prod"
 
 [build.environment]
