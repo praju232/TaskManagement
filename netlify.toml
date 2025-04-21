@@ -1,0 +1,7 @@
+[build]
+  base = "src"
+  publish = "dist/TaskManagement"
+  command = "npm install --force && npm run build --prod"
+
+[build.environment]
+  NODE_VERSION = "18.x"
