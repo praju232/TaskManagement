@@ -1,27 +1,102 @@
-# TaskManagement
+# Task Management Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+A modern task management application built with Angular, featuring a Kanban board layout and drag-and-drop functionality.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Kanban board layout with three columns (To Do, In Progress, Done)
+- Drag-and-drop task management
+- Create new tasks with title, description, and status
+- Delete tasks
+- Update task status
+- Responsive design
+- Modern UI with Bootstrap
 
-## Code scaffolding
+## Architecture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Frontend
+- **Framework**: Angular 18+
+- **UI Framework**: Bootstrap 5.3
+- **State Management**: Component-based state management
+- **Routing**: Angular Router
+- **API Integration**: JSON Server for mock API
 
-## Build
+### Project Structure
+```
+src/
+├── app/
+│   ├── api.service.ts        # API service for CRUD operations
+│   ├── dashboard/
+│   │   ├── dashboard.component.html  # Kanban board UI
+│   │   ├── dashboard.component.ts    # Task management logic
+│   │   └── dashboard.component.sass  # Component styling
+│   ├── app.config.ts         # Application configuration
+│   └── app.routes.ts         # Application routing
+├── assets/                   # Static assets
+└── environments/            # Environment configurations
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting Started
 
-## Running unit tests
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd TaskManagement
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Further help
+3. Start JSON Server (for mock API):
+```bash
+npm install -g json-server
+json-server --watch db.json
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Start Angular development server:
+```bash
+ng serve
+```
+
+The application will be available at `http://localhost:4200`
+
+## Usage
+
+1. Add New Task:
+   - Click the "Add New Task" button
+   - Fill in the title, description, and select a status
+   - Click "Create Task" to save
+
+2. Manage Tasks:
+   - Drag and drop tasks between columns to update status
+   - Click the delete button to remove a task
+   - Tasks persist in the database
+
+## Technologies Used
+
+- **Frontend**: Angular 18+
+- **UI Framework**: Bootstrap 5.3
+- **API**: JSON Server
+- **Icons**: Font Awesome
+- **Development Tools**: Angular CLI, npm
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

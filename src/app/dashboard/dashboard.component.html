@@ -1,0 +1,109 @@
+<div class="container-fluid p-4">
+  <!-- Add New Task Button -->
+   <h1 class="text-center">Task Management Dashboard</h1>
+   <div class="d-flex justify-content-end">
+    <button class="btn btn-primary mb-3" (click)="openModal(taskModal)">
+      <i class="fas fa-plus me-2"></i>Add New Task
+    </button>
+  </div>
+
+
+  <!-- Modal -->
+  <ng-template #taskModal let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title">Create New Task</h5>
+          <button type="button" class="btn-close" (click)="modalRef.close()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="taskForm" >
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" formControlName="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status" formControlName="status" required>
+                <option value="todo">To Do</option>
+                <option value="inProgress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="modalRef.close()">Close</button>
+          <button type="submit" form="taskForm" class="btn btn-primary" (click)="createTask(taskForm)">Create Task</button>
+        </div>
+  </ng-template>
+
+
+  <!-- Kanban Board -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">To Do</h5>
+        </div>
+        <div class="card-body">
+          <div class="task-list" id="todo" (dragover)="allowDrop($event)" (drop)="drop($event, 'todo')">
+            <div *ngFor="let task of tasks.todo" class="task-card mb-3" draggable="true" (dragstart)="drag($event, task)">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">{{task.title}}</h6>
+                  <p class="card-text">{{task.description}}</p>
+                  <button (click)="deleteTask(task, 'todo')" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-warning text-white">
+          <h5 class="mb-0">In Progress</h5>
+        </div>
+        <div class="card-body">
+          <div class="task-list" id="inProgress" (dragover)="allowDrop($event)" (drop)="drop($event, 'inProgress')">
+            <div *ngFor="let task of tasks.inProgress" class="task-card mb-3" draggable="true" (dragstart)="drag($event, task)">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">{{task.title}}</h6>
+                  <p class="card-text">{{task.description}}</p>
+                  <button (click)="deleteTask(task, 'inProgress')" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">Done</h5>
+        </div>
+        <div class="card-body">
+          <div class="task-list" id="done" (dragover)="allowDrop($event)" (drop)="drop($event, 'done')">
+            <div *ngFor="let task of tasks.done" class="task-card mb-3" draggable="true" (dragstart)="drag($event, task)">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">{{task.title}}</h6>
+                  <p class="card-text">{{task.description}}</p>
+                  <button (click)="deleteTask(task, 'done')" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

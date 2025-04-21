@@ -1,0 +1,73 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design new website layout",
+      "description": "Create modern and responsive design for the new company website",
+      "status": "todo",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Update documentation",
+      "description": "Review and update all project documentation files",
+      "status": "inProgress",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Implement new feature",
+      "description": "Add drag and drop functionality to the task management system",
+      "status": "inProgress",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "4",
+      "title": "Fix API integration",
+      "description": "Resolve issues with the third-party API integration",
+      "status": "inProgress",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "Setup development environment",
+      "description": "Configure development tools and dependencies",
+      "status": "done",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "6",
+      "title": "Create initial project structure",
+      "description": "Set up the basic project structure and initial components",
+      "status": "done",
+      "createdAt": "2025-04-21T10:40:00.000Z"
+    },
+    {
+      "id": "d28d",
+      "title": "new",
+      "description": "sdczsdcsz",
+      "status": "todo"
+    },
+    {
+      "id": "1745253183664",
+      "title": "e3we3e",
+      "description": "done task",
+      "status": "done",
+      "createdAt": "2025-04-21T16:33:03.664Z"
+    },
+    {
+      "id": "1745253198268",
+      "title": "in progress",
+      "description": "csdxfcsdfc",
+      "status": "inProgress",
+      "createdAt": "2025-04-21T16:33:18.268Z"
+    },
+    {
+      "id": "1745253206674",
+      "title": "deded",
+      "description": "decwse",
+      "status": "todo",
+      "createdAt": "2025-04-21T16:33:26.674Z"
+    }
+  ]
+}
