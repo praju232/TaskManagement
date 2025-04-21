@@ -4,4 +4,4 @@
   command = "npm install --force && npm run build --prod"
 
 [build.environment]
-  NODE_VERSION = "18.x"
+  NODE_VERSION = "18.17.0"
