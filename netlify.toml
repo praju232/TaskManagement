@@ -1,7 +1,7 @@
 [build]
   base = "src"
   publish = "dist/browser"
-  command = "npm install --force && ng build --prod"
+  command = "npm install --force && ng build --configuration production"
 
 [build.environment]
   NODE_VERSION = "18.19.0"
